@@ -22,7 +22,7 @@ second_knight = Knight("Sir Galahad", 20)
 # Вывод строки об окончании сражения'''
 
 import threading
-import time
+from time import sleep
 
 # Создание класса
 class Knight(threading.Thread):
@@ -34,7 +34,7 @@ class Knight(threading.Thread):
         print(f'{self.name}, на нас напали!')
         counter = 1
         while 100 - self.power > 0:
-            time.sleep(1)
+            sleep(1)
             print(f'{self.name} сражается {counter} день, осталось {100 - self.power} воинов')
             self.power += int(self.power / counter)
             counter +=1
